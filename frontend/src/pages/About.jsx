@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 
 const About = () => {
   const skills = [
-    { skill: 'Python', level: 95 },
+    { skill: 'Python', level: 90 },
     { skill: 'Pandas & NumPy', level: 90 },
     { skill: 'Machine Learning', level: 85 },
     { skill: 'SQL', level: 80 },
