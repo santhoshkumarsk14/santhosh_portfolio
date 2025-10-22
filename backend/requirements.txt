@@ -1,0 +1,13 @@
+streamlit
+pandas
+numpy
+plotly
+openai
+transformers
+torch
+scikit-learn
+requests
+flask
+flask-cors
+gspread
+oauth2client
