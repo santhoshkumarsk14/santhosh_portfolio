@@ -15,13 +15,14 @@ const Hero = () => {
       { threshold: 0.3 }
     );
 
-    if (heroRef.current) {
-      observer.observe(heroRef.current);
+    const currentRef = heroRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (heroRef.current) {
-        observer.unobserve(heroRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
@@ -51,23 +52,23 @@ const Hero = () => {
           </h1>
 
           <h2 className="text-xl md:text-2xl lg:text-3xl text-secondary mb-8 font-medium">
-            Data Analyst & Software Engineer
+            Java Backend Developer
           </h2>
 
           <p className="text-lg md:text-xl text-secondary mb-12 max-w-3xl mx-auto leading-relaxed">
-            "Transforming data into actionable insights through intelligent automation and interactive analytics"
+            "Building scalable, fault-tolerant microservices and REST APIs with Spring Boot, RabbitMQ, and MySQL"
           </p>
 
           <p className="text-base md:text-lg text-secondary mb-8">
-            Trichy, Tamil Nadu, India
+            Chennai, India
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
             <button
-              onClick={() => scrollToSection('#projects')}
+              onClick={() => scrollToSection('#experience')}
               className="bg-accent hover:bg-blue-600 text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 flex items-center space-x-2 shadow-lg hover:shadow-xl hover:-translate-y-1"
             >
-              <span>View Projects</span>
+              <span>View Experience</span>
             </button>
 
             <a

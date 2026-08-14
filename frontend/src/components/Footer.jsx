@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Heart, Github, Linkedin, Mail, Twitter } from 'lucide-react';
+import { Heart, Github, Linkedin, Mail } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,15 +10,13 @@ const Footer = () => {
       { name: 'Home', href: '#home' },
       { name: 'About', href: '#about' },
       { name: 'Skills', href: '#skills' },
-      { name: 'Projects', href: '#projects' },
       { name: 'Experience', href: '#experience' },
       { name: 'Contact', href: '#contact' }
     ],
     socialLinks: [
-      { name: 'LinkedIn', href: 'https://linkedin.com', icon: <Linkedin className="w-5 h-5" /> },
-      { name: 'GitHub', href: 'https://github.com', icon: <Github className="w-5 h-5" /> },
-      { name: 'Twitter', href: 'https://twitter.com', icon: <Twitter className="w-5 h-5" /> },
-      { name: 'Email', href: 'mailto:santhosh@example.com', icon: <Mail className="w-5 h-5" /> }
+      { name: 'LinkedIn', href: 'https://linkedin.com/in/santhoshkumar-ravichandran', icon: <Linkedin className="w-5 h-5" /> },
+      { name: 'GitHub', href: 'https://github.com/santhoshkumarsk14', icon: <Github className="w-5 h-5" /> },
+      { name: 'Email', href: 'mailto:santhosh14.ravichandran@gmail.com', icon: <Mail className="w-5 h-5" /> }
     ]
   };
 
@@ -43,7 +41,7 @@ const Footer = () => {
               SR
             </Link>
             <p className="text-secondary/80 leading-relaxed">
-              Transforming data into actionable insights through innovative analytics and AI-powered solutions.
+              Building scalable, fault-tolerant backend systems with Spring Boot, Java, and MySQL.
             </p>
           </div>
 

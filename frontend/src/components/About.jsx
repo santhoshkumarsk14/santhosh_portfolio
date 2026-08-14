@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Code, Database, BarChart3, Zap } from 'lucide-react';
+import { Code, Database, ShieldCheck, Cloud } from 'lucide-react';
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -15,37 +15,38 @@ const About = () => {
       { threshold: 0.3 }
     );
 
-    if (aboutRef.current) {
-      observer.observe(aboutRef.current);
+    const currentRef = aboutRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (aboutRef.current) {
-        observer.unobserve(aboutRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
 
   const services = [
     {
-      icon: <BarChart3 className="w-8 h-8 text-accent" />,
-      title: 'Data Analysis & Visualization',
-      description: 'Transforming complex datasets into actionable insights through interactive dashboards and compelling visualizations.'
+      icon: <Code className="w-8 h-8 text-accent" />,
+      title: 'Backend & Microservices',
+      description: 'Architecting fault-tolerant Spring Boot microservices and event-driven systems with RabbitMQ for enterprise-scale platforms.'
     },
     {
-      icon: <Zap className="w-8 h-8 text-accent" />,
-      title: 'AI & Machine Learning',
-      description: 'Building predictive models and AI-powered solutions to automate decision-making processes.'
+      icon: <ShieldCheck className="w-8 h-8 text-accent" />,
+      title: 'API Design & Security',
+      description: 'Building and securing RESTful APIs with Spring Security and JWT authentication to eliminate unauthorized access.'
     },
     {
       icon: <Database className="w-8 h-8 text-accent" />,
-      title: 'Data Engineering',
-      description: 'Designing robust data pipelines and ETL processes for efficient data processing and storage.'
+      title: 'Database Engineering',
+      description: 'Designing and optimizing MySQL schemas, stored procedures, and queries to cut execution time and improve throughput.'
     },
     {
-      icon: <Code className="w-8 h-8 text-accent" />,
-      title: 'Dashboard Development',
-      description: 'Creating interactive web applications and dashboards using modern frameworks and tools.'
+      icon: <Cloud className="w-8 h-8 text-accent" />,
+      title: 'Cloud & DevOps',
+      description: 'Deploying and maintaining production workloads on AWS with Docker, Jenkins, and CI/CD pipelines.'
     }
   ];
 
@@ -73,26 +74,24 @@ const About = () => {
 
             <div className="space-y-4 text-secondary leading-relaxed">
               <p>
-                I'm a Data Analyst and Software Engineer with 3+ years of experience transforming
-                complex datasets into actionable business insights. My journey combines software
-                engineering excellence with data science expertise, allowing me to build end-to-end
-                solutions that not only analyze data but also deliver it through intuitive,
-                interactive platforms.
+                I'm a Java Backend Developer with 3.5+ years of experience building scalable
+                microservices and REST APIs using Spring Boot, RabbitMQ, and MySQL. I specialize in
+                designing event-driven, fault-tolerant systems and deploying production workloads
+                on AWS.
               </p>
 
               <p>
-                With a strong foundation in Java and Spring Boot, I've architected enterprise-grade
-                applications and microservices while specializing in data analytics using Python,
-                SQL, and Power BI. My work spans from developing sophisticated dashboards that
-                improve decision accuracy by 35% to automating data workflows that reduce manual
-                processing by 85%.
+                At Relevantz Technologies, working on Tata Communications' enterprise platform,
+                I architect Spring Boot microservices that ensure 99.9% uptime for millions of
+                end-users and build event-driven communication between 10+ services using RabbitMQ.
+                Earlier, at Solverminds, I led development of enterprise applications used by
+                300+ users, securing them with Spring Security and role-based access control.
               </p>
 
               <p>
-                Currently, I'm expanding my expertise in Machine Learning and Predictive Analytics
-                through LogicMojo's Data Science program, where I'm mastering supervised and
-                unsupervised learning algorithms, feature engineering, and advanced model evaluation
-                techniques.
+                Outside of core backend work, I've picked up some data analytics and ML fundamentals
+                through LogicMojo's Data Science program, which sharpens how I reason about the data
+                flowing through the systems I build.
               </p>
             </div>
 

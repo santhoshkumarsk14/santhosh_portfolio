@@ -80,13 +80,13 @@ const Contact = () => {
             <div className="mt-12 text-center">
               <h2 className="text-2xl font-bold mb-6 text-primary">Get in Touch</h2>
               <div className="flex justify-center space-x-8">
-                <a href="https://linkedin.com" className="text-accent hover:text-blue-600 transition-colors font-medium">
+                <a href="https://linkedin.com/in/santhoshkumar-ravichandran" className="text-accent hover:text-blue-600 transition-colors font-medium">
                   LinkedIn
                 </a>
-                <a href="https://github.com" className="text-accent hover:text-blue-600 transition-colors font-medium">
+                <a href="https://github.com/santhoshkumarsk14" className="text-accent hover:text-blue-600 transition-colors font-medium">
                   GitHub
                 </a>
-                <a href="mailto:email@example.com" className="text-accent hover:text-blue-600 transition-colors font-medium">
+                <a href="mailto:santhosh14.ravichandran@gmail.com" className="text-accent hover:text-blue-600 transition-colors font-medium">
                   Email
                 </a>
               </div>

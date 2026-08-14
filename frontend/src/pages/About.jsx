@@ -5,14 +5,14 @@ import Footer from '../components/Footer';
 
 const About = () => {
   const skills = [
-    { skill: 'Python', level: 90 },
-    { skill: 'Pandas & NumPy', level: 90 },
-    { skill: 'Machine Learning', level: 85 },
-    { skill: 'SQL', level: 80 },
-    { skill: 'Data Visualization', level: 90 },
-    { skill: 'AI/ML Frameworks', level: 85 },
-    { skill: 'Streamlit', level: 90 },
-    { skill: 'React.js', level: 75 }
+    { skill: 'Java', level: 90 },
+    { skill: 'Spring Boot', level: 90 },
+    { skill: 'Microservices', level: 85 },
+    { skill: 'MySQL', level: 85 },
+    { skill: 'RESTful API Design', level: 90 },
+    { skill: 'Spring Security', level: 80 },
+    { skill: 'RabbitMQ', level: 75 },
+    { skill: 'React.js', level: 70 }
   ];
 
   return (
@@ -29,13 +29,14 @@ const About = () => {
                 My Story
               </h2>
               <p className="text-text-secondary mb-6 leading-relaxed">
-                I'm Santhoshkumar Ravichandran, a passionate data analyst who loves turning complex datasets
-                into meaningful insights. With a background in data science and AI, I specialize in creating
-                interactive dashboards and AI-powered applications that help businesses make data-driven decisions.
+                I'm Santhoshkumar Ravichandran, a Java Backend Developer with 3.5+ years of experience
+                building scalable microservices and REST APIs using Spring Boot, RabbitMQ, and MySQL.
+                I specialize in designing event-driven, fault-tolerant systems and deploying production
+                workloads on AWS.
               </p>
               <p className="text-text-secondary leading-relaxed">
-                My approach combines technical expertise with creative storytelling to make data accessible
-                and actionable for everyone.
+                I'm seeking a backend engineering role at a product-based company where I can keep building
+                reliable, well-tested systems at scale.
               </p>
             </div>
             <div>

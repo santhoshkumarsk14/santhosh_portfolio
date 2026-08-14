@@ -21,13 +21,14 @@ const Contact = () => {
       { threshold: 0.3 }
     );
 
-    if (contactRef.current) {
-      observer.observe(contactRef.current);
+    const currentRef = contactRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (contactRef.current) {
-        observer.unobserve(contactRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
@@ -83,7 +84,7 @@ const Contact = () => {
     {
       icon: <MapPin className="w-6 h-6" />,
       label: 'Location',
-      value: 'Trichy, Tamil Nadu, India',
+      value: 'Chennai, India',
       link: null
     }
   ];
@@ -101,7 +102,7 @@ const Contact = () => {
             Get In Touch
           </h2>
           <p className="text-secondary max-w-2xl mx-auto">
-            Ready to transform your data into actionable insights? Let's discuss your project and how I can help.
+            Looking for a backend engineer to build scalable, reliable systems? Let's discuss the role and how I can help.
           </p>
         </div>
 
@@ -228,7 +229,7 @@ const Contact = () => {
                   <span className="text-primary font-medium">Available for Projects</span>
                 </div>
                 <p className="text-secondary text-sm">
-                  Currently accepting new data analytics and dashboard development projects.
+                  Open to new backend engineering opportunities at product-based companies.
                   Response time: 24-48 hours.
                 </p>
               </div>

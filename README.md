@@ -1,77 +1,40 @@
-# Santhoshkumar Ravichandran - Data Analyst Portfolio
+# Santhoshkumar Ravichandran — Java Backend Developer Portfolio
 
 ## 🎯 Overview
 
-Welcome to my interactive data analyst portfolio! This project showcases my expertise in data analysis, AI-powered insights, and interactive dashboard development. The portfolio features a modern React frontend with Streamlit-powered dashboards and AI capabilities.
+Personal portfolio site for a Java Backend Developer with 3.5+ years of experience building
+scalable microservices and REST APIs with Spring Boot, RabbitMQ, and MySQL. The site is a
+React single-page app with sections for About, Skills, Experience, and Contact.
 
 ## 🚀 Features
 
 ### Frontend (React + Tailwind CSS)
 - **Modern UI**: Clean, minimalist design with custom color palette
 - **Responsive Design**: Mobile-first approach with hover effects and animations
-- **Interactive Components**: Skill bars, project cards, and smooth navigation
+- **Interactive Components**: Skill grid, experience timeline, and smooth navigation
 - **Professional Typography**: Poppins headings, Inter body text, Fira Code for code
 
-### Backend (Python + Streamlit)
-- **6 Interactive Dashboards**:
-  1. Business Analytics Dashboard - Sales analysis with AI predictions
-  2. Finance & Investment Insights - Stock analysis with trend alerts
-  3. Social Media Sentiment Analyzer - Real-time sentiment analysis
-  4. Recommendation Engine - Personalized recommendations
-  5. Automated Reporting - AI-generated reports from CSV data
-  6. What-If Scenario Analysis - Dynamic business scenario modeling
-
-### AI Features
-- **Sales Prediction**: Machine learning models for revenue forecasting
-- **Trend Detection**: AI-powered anomaly detection in financial data
-- **Sentiment Analysis**: Real-time social media sentiment processing
-- **Recommendation System**: Collaborative filtering algorithms
-- **Automated Reporting**: AI-generated insights and reports
-- **Scenario Optimization**: AI-driven decision recommendations
-
-### AI Assistant Chatbot
-- **Natural Language Queries**: Ask questions in plain English
-- **Instant Insights**: Get immediate answers about your data
-- **Advanced Analytics**: Generate reports and predictions on demand
+### Contact Backend (Python + Flask)
+- Simple Flask API (`backend/contact_api.py`) that receives the contact form submission
+  and saves it to a Google Sheet via `gspread`
 
 ## 🛠️ Tech Stack
 
 ### Frontend
 - React.js
-- Tailwind CSS
 - React Router DOM
+- Tailwind CSS
+- lucide-react icons
 
-### Backend
-- Python 3.8+
-- Streamlit
-- Pandas
-- NumPy
-- Plotly
-- OpenAI API (optional)
-- HuggingFace Transformers (optional)
-
-### Data & Storage
-- CSV/Excel files
-- MySQL (optional)
-
-## 🎨 Design System
-
-### Color Palette
-- **Deep Blue** (#1E3A8A): Trust, professionalism
-- **Vibrant Teal** (#14B8A6): Highlights, call-to-action
-- **Soft Gray** (#F3F4F6): Background
-- **Amber** (#FBBF24): Buttons, icons
-- **Coral** (#F87171): Alerts, notifications
-
-### Typography
-- **Headings**: Poppins (Bold, Modern, Clean)
-- **Body Text**: Inter (Readable, Minimalist)
-- **Code**: Fira Code (Monospace)
+### Backend (contact form only)
+- Flask
+- Flask-CORS
+- gspread / oauth2client (Google Sheets integration)
 
 ## 📁 Project Structure
 
 ```
-Santhoshkumar-Portfolio/
+santhosh_portfolio/
 │
 ├── frontend/                  # React application
 │   ├── public/
@@ -80,36 +43,26 @@ Santhoshkumar-Portfolio/
 │   │   │   ├── Navbar.jsx
 │   │   │   ├── Footer.jsx
 │   │   │   ├── Hero.jsx
-│   │   │   ├── ProjectCard.jsx
+│   │   │   ├── Stats.jsx
+│   │   │   ├── About.jsx
+│   │   │   ├── Skills.jsx
+│   │   │   ├── Experience.jsx
+│   │   │   ├── Contact.jsx
 │   │   │   └── SkillBar.jsx
 │   │   ├── pages/            # Page components
 │   │   │   ├── Home.jsx
 │   │   │   ├── About.jsx
-│   │   │   ├── Contact.jsx
-│   │   │   └── Project[1-6].jsx
+│   │   │   └── Contact.jsx
 │   │   ├── App.js
 │   │   └── index.js
 │   ├── tailwind.config.js
 │   └── package.json
 │
-├── backend/                   # Python/Streamlit applications
-│   ├── dashboards/           # Individual dashboard apps
-│   │   ├── business_analytics.py
-│   │   ├── finance_insights.py
-│   │   ├── social_media.py
-│   │   ├── recommendation_engine.py
-│   │   ├── automated_reporting.py
-│   │   └── what_if_scenario.py
-│   ├── ai_chatbot/
-│   │   └── chatbot.py
-│   ├── utils/                # Utility functions
-│   ├── requirements.txt
-│   └── venv/                 # Virtual environment
+├── backend/                   # Flask contact form API
+│   ├── contact_api.py
+│   └── requirements.txt
 │
-├── assets/                   # Static assets
-│   ├── images/
-│   ├── icons/
-│   └── animations/
+├── assets/                   # Static assets (resume, etc.)
 │
 └── README.md
 ```
@@ -117,9 +70,9 @@ Santhoshkumar-Portfolio/
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js (v14+)
-- Python 3.8+
-- npm or yarn
+- Node.js (v18+)
+- Python 3.8+ (only needed for the contact form API)
+- npm
 
 ### Frontend Setup
 
@@ -131,7 +84,7 @@ npm start
 
 The React app will run on `http://localhost:3000`
 
-### Backend Setup
+### Contact API Setup (optional)
 
 ```bash
 cd backend
@@ -144,116 +97,23 @@ venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### Running Individual Dashboards
+Set `GOOGLE_SHEETS_CREDENTIALS` and `SPREADSHEET_ID` in `contact_api.py` to your own Google
+Sheets service account before running:
 
 ```bash
-# Business Analytics Dashboard
-streamlit run dashboards/business_analytics.py
-
-# Finance Insights Dashboard
-streamlit run dashboards/finance_insights.py
-
-# Social Media Analyzer
-streamlit run dashboards/social_media.py
-
-# Recommendation Engine
-streamlit run dashboards/recommendation_engine.py
-
-# Automated Reporting
-streamlit run dashboards/automated_reporting.py
-
-# What-If Scenario Analysis
-streamlit run dashboards/what_if_scenario.py
-
-# AI Chatbot
-streamlit run ai_chatbot/chatbot.py
+python contact_api.py
 ```
 
-Each dashboard will run on `http://localhost:8501` (Streamlit's default port)
+The API runs on `http://localhost:5000`.
 
 ## 🎯 Portfolio Sections
 
-### Home Page
-- Hero section with tagline and CTA
-- Quick stats (animated counters)
-- Featured projects grid
-
-### Projects Pages
-Each project includes:
-- Problem statement
-- Dataset information
-- Analysis & insights with charts
-- Interactive demo links
-- AI-powered features
-- Code & documentation links
-
-### AI Assistant Chatbot
-- Floating chat interface
-- Natural language processing
-- Data query capabilities
-- Report generation
-
-### About/Skills
-- Personal story
-- Interactive skill bars
-- Technical expertise showcase
-
-### Contact
-- Contact form with AI suggestions
-- Social media links
-- Professional networking
-
-## 🤖 AI Integration
-
-### OpenAI API (Optional)
-For advanced AI features, set up your OpenAI API key:
-
-```bash
-export OPENAI_API_KEY="your-api-key-here"
-```
-
-### HuggingFace Integration
-The sentiment analysis uses HuggingFace transformers for local processing.
-
-## 📊 Dashboard Features
-
-### Business Analytics Dashboard
-- Sales trend analysis
-- Regional performance metrics
-- Product KPIs
-- AI-powered sales predictions
-- Interactive filters and date ranges
-
-### Finance & Investment Insights
-- Real-time stock price visualization
-- Technical analysis (moving averages)
-- Risk metrics (volatility, Sharpe ratio)
-- AI trend alerts for unusual patterns
-
-### Social Media Sentiment Analyzer
-- Real-time sentiment scoring
-- Word cloud generation
-- Hashtag analysis
-- AI trending topics detection
-- Engagement prediction
-
-### Recommendation Engine
-- User-item matrix analysis
-- Collaborative filtering
-- Content-based recommendations
-- AI-powered personalized suggestions
-
-### Automated Reporting
-- CSV file upload and analysis
-- Automatic data profiling
-- AI-generated insights and reports
-- Multiple export formats
-
-### What-If Scenario Analysis
-- Dynamic parameter adjustment
-- Real-time KPI updates
-- Business scenario modeling
-- AI decision recommendations
+- **Hero** — name, title, location, resume download
+- **Stats** — years of experience, microservices delivered, users served
+- **About** — background summary and core focus areas
+- **Skills** — languages, frameworks, architecture, database, messaging, cloud/DevOps, practices
+- **Experience** — work history timeline with education
+- **Contact** — contact form, direct contact info, and social links
 
 ## 🌐 Deployment
 
@@ -263,19 +123,6 @@ cd frontend
 npm run build
 npm run deploy
 ```
-
-### Backend (Streamlit Cloud)
-1. Push backend code to GitHub
-2. Connect to Streamlit Cloud
-3. Deploy individual apps
-
-## 📱 Responsive Design
-
-The portfolio is fully responsive with:
-- Mobile-first approach
-- Flexible grid layouts
-- Touch-friendly interactions
-- Optimized typography scaling
 
 ## 🎨 Customization
 
@@ -288,13 +135,6 @@ Update font imports in `frontend/src/index.css` and `tailwind.config.js`.
 ### Content
 Modify component files in `frontend/src/components/` and `frontend/src/pages/`.
 
-## 🤝 Contributing
-
-This is a personal portfolio project, but feel free to:
-- Report bugs
-- Suggest improvements
-- Fork for your own use
-
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
@@ -302,10 +142,6 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 📞 Contact
 
 **Santhoshkumar Ravichandran**
-- Email: your.email@example.com
-- LinkedIn: [Your LinkedIn Profile](https://linkedin.com)
-- GitHub: [Your GitHub Profile](https://github.com)
-
----
-
-*"Turning Data into Insights, with a Lovable AI Touch"* 🚀
+- Email: santhosh14.ravichandran@gmail.com
+- LinkedIn: [santhoshkumar-ravichandran](https://linkedin.com/in/santhoshkumar-ravichandran)
+- GitHub: [santhoshkumarsk14](https://github.com/santhoshkumarsk14)

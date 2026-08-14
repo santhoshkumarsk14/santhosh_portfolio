@@ -15,13 +15,14 @@ const Experience = () => {
       { threshold: 0.3 }
     );
 
-    if (experienceRef.current) {
-      observer.observe(experienceRef.current);
+    const currentRef = experienceRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (experienceRef.current) {
-        observer.unobserve(experienceRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
@@ -29,18 +30,20 @@ const Experience = () => {
   const experiences = [
     {
       id: 1,
-      position: "Software Engineer (Contract)",
-      company: "ONE Click Solutions",
-      location: "Singapore",
-      duration: "December 2024 – May 2025",
-      current: false,
+      position: "Software Engineer",
+      company: "Relevantz Technologies — Client: Tata Communications Ltd",
+      location: "Chennai, India",
+      duration: "December 2025 – Present",
+      current: true,
       achievements: [
-        "Designed data-driven web applications and dashboards using Python, Power BI, and SQL, improving decision accuracy by 35%",
-        "Architected and deployed a Timesheet Automation System leveraging Microservices architecture, achieving 85% reduction in manual processing errors",
-        "Developed a Timesheet Analytics System leveraging MySQL and Power BI to track productivity metrics, reducing manual reporting time by 85%",
-        "Delivered maintainable code through Object-Oriented Programming principles, industry design patterns, and comprehensive testing methodologies"
+        "Architected fault-tolerant Spring Boot microservices for an enterprise platform, ensuring 99.9% uptime for millions of end-users",
+        "Built event-driven communication between 10+ services using RabbitMQ, increasing system throughput by 35%",
+        "Optimized MySQL schemas, stored procedures, and multi-table queries, cutting query execution time by 30% for reporting workflows",
+        "Secured REST APIs using Spring Security and JWT authentication, eliminating unauthorized access vectors",
+        "Led peer code reviews and authored technical documentation, reducing onboarding time for new engineers by 20%",
+        "Resolved production incidents through root-cause analysis, reducing repeat failures by 40% month-over-month"
       ],
-      technologies: ["Python", "Power BI", "SQL", "Microservices", "MySQL", "Spring Boot"]
+      technologies: ["Java", "Spring Boot", "RabbitMQ", "MySQL", "Spring Security", "JWT", "AWS"]
     },
     {
       id: 2,
@@ -50,32 +53,20 @@ const Experience = () => {
       duration: "June 2022 – October 2024",
       current: false,
       achievements: [
-        "Spearheaded development of Requisition Management System, achieving 97% customer satisfaction through efficient full-stack implementation",
-        "Constructed enterprise solutions using Java, Spring Boot, JSF, MySQL, and RESTful APIs to meet diverse business needs",
-        "Created automated SQL scripts for generating weekly and monthly performance reports",
-        "Developed backend logic to extract, clean, and store structured data for financial and inventory reporting"
+        "Led development of a Requisition Management System (Java, Spring Boot, JSF, MySQL) serving 300+ enterprise users, achieving a 97% customer satisfaction rating",
+        "Implemented Spring Security-based authentication and role-based access control across 5 enterprise applications, securing 10,000+ records",
+        "Improved application performance by 40% by redesigning MySQL schemas and optimizing queries with the DBA team",
+        "Integrated REST APIs with Angular frontend, reducing data-fetch latency by 25% and eliminating 3 recurring integration bugs",
+        "Automated SQL reporting scripts, saving 15+ analyst-hours per month and reducing reporting errors to zero",
+        "Drove Test-Driven Development practices, achieving 85%+ unit test coverage and cutting post-release defect rate by 30%"
       ],
-      technologies: ["Java", "Spring Boot", "JSF", "MySQL", "RESTful APIs", "SQL"]
+      technologies: ["Java", "Spring Boot", "JSF", "MySQL", "Spring Security", "REST APIs", "Angular"]
     }
   ];
 
   const education = [
     {
       id: 1,
-      type: "course",
-      title: "Data Scientist with Machine Learning Program",
-      institution: "LogicMojo",
-      duration: "June 2024 – Present",
-      current: true,
-      highlights: [
-        "Completed foundational modules covering Python, Pandas, NumPy, and Data Visualization Techniques",
-        "Gained hands-on experience creating interactive dashboards and analytical reports using Power BI",
-        "Studying supervised and unsupervised machine learning algorithms, data preprocessing, model evaluation techniques, and feature engineering methodologies"
-      ],
-      skills: ["Python", "Pandas", "NumPy", "Data Visualization", "Power BI", "Machine Learning", "Feature Engineering"]
-    },
-    {
-      id: 2,
       type: "degree",
       title: "Bachelor of Engineering in Electrical and Electronics Engineering",
       institution: "K. Ramakrishnan College of Technology",
@@ -85,12 +76,9 @@ const Experience = () => {
     }
   ];
 
-
   const allItems = [
-    ...education.filter(edu => edu.current).map(edu => ({ ...edu, type: 'education' })),
-    ...experiences.filter(exp => exp.company === "ONE Click Solutions").map(exp => ({ ...exp, type: 'work' })),
-    ...experiences.filter(exp => exp.company === "Solverminds Solutions and Technologies").map(exp => ({ ...exp, type: 'work' })),
-    ...education.filter(edu => !edu.current).map(edu => ({ ...edu, type: 'education' }))
+    ...experiences.map(exp => ({ ...exp, type: 'work' })),
+    ...education.map(edu => ({ ...edu, type: 'education' }))
   ];
 
   return (
@@ -101,7 +89,7 @@ const Experience = () => {
             Professional Journey
           </h2>
           <p className="text-secondary max-w-2xl mx-auto">
-            Building data-driven solutions across analytics and software engineering
+            Building scalable backend systems across enterprise software engineering roles
           </p>
         </div>
 
@@ -114,7 +102,7 @@ const Experience = () => {
             <div className="space-y-8">
               {allItems.map((item, index) => (
                 <div
-                  key={item.id}
+                  key={`${item.type}-${item.id}`}
                   className={`relative flex items-start space-x-6 transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}
                   style={{ transitionDelay: `${index * 200}ms` }}
                 >

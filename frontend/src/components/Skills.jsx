@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Code, Database, BarChart3, Cpu, Monitor, Server, Cloud, Wrench } from 'lucide-react';
+import { Code, Database, Server, ShieldCheck, Cloud, Zap, Users, Layers } from 'lucide-react';
 
 const Skills = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -16,82 +16,89 @@ const Skills = () => {
       { threshold: 0.3 }
     );
 
-    if (skillsRef.current) {
-      observer.observe(skillsRef.current);
+    const currentRef = skillsRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (skillsRef.current) {
-        observer.unobserve(skillsRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
 
   const skillCategories = [
     {
-      category: 'Data Analysis & Processing',
-      icon: <Database className="w-8 h-8" />,
+      category: 'Languages',
+      icon: <Code className="w-8 h-8" />,
       skills: [
-        { name: 'Python', level: 'Expert', icon: <Code className="w-6 h-6" />, years: '3+', color: '#3776AB' },
-        { name: 'Pandas', level: 'Expert', icon: <Database className="w-6 h-6" />, years: '3+', color: '#150458' },
-        { name: 'NumPy', level: 'Expert', icon: <BarChart3 className="w-6 h-6" />, years: '3+', color: '#013243' },
-        { name: 'SQL', level: 'Advanced', icon: <Database className="w-6 h-6" />, years: '3+', color: '#4479A1' }
+        { name: 'Java', level: 'Expert', icon: <Code className="w-6 h-6" />, years: '3.5+', color: '#007396' },
+        { name: 'SQL', level: 'Advanced', icon: <Database className="w-6 h-6" />, years: '3.5+', color: '#4479A1' },
+        { name: 'JavaScript', level: 'Intermediate', icon: <Code className="w-6 h-6" />, years: '2+', color: '#F7DF1E' }
       ]
     },
     {
-      category: 'Machine Learning',
-      icon: <Cpu className="w-8 h-8" />,
-      skills: [
-        { name: 'Scikit-learn', level: 'Advanced', icon: <Cpu className="w-6 h-6" />, years: '1+', color: '#F7931E' },
-        { name: 'TensorFlow', level: 'Intermediate', icon: <Cpu className="w-6 h-6" />, years: '1+', color: '#FF6F00' },
-        { name: 'PyTorch', level: 'Intermediate', icon: <Cpu className="w-6 h-6" />, years: '1+', color: '#EE4C2C' },
-        { name: 'Feature Engineering', level: 'Advanced', icon: <Wrench className="w-6 h-6" />, years: '2+', color: '#3B82F6' }
-      ]
-    },
-    {
-      category: 'Data Visualization',
-      icon: <BarChart3 className="w-8 h-8" />,
-      skills: [
-        { name: 'Power BI', level: 'Advanced', icon: <BarChart3 className="w-6 h-6" />, years: '2+', color: '#F2C811' },
-        { name: 'Tableau', level: 'Expert', icon: <BarChart3 className="w-6 h-6" />, years: '2+', color: '#E97627' },
-        { name: 'Plotly', level: 'Advanced', icon: <BarChart3 className="w-6 h-6" />, years: '2+', color: '#3F4F75' },
-        { name: 'Matplotlib', level: 'Advanced', icon: <BarChart3 className="w-6 h-6" />, years: '3+', color: '#11557C' }
-      ]
-    },
-    {
-      category: 'Backend Development',
+      category: 'Frameworks',
       icon: <Server className="w-8 h-8" />,
       skills: [
-        { name: 'Java', level: 'Expert', icon: <Code className="w-6 h-6" />, years: '3+', color: '#007396' },
-        { name: 'Spring Boot', level: 'Expert', icon: <Server className="w-6 h-6" />, years: '3+', color: '#6DB33F' },
-        { name: 'Microservices', level: 'Advanced', icon: <Server className="w-6 h-6" />, years: '2+', color: '#3B82F6' },
-        { name: 'REST APIs', level: 'Expert', icon: <Server className="w-6 h-6" />, years: '3+', color: '#009688' },
-        { name: 'MySQL', level: 'Advanced', icon: <Database className="w-6 h-6" />, years: '3+', color: '#4479A1' }
+        { name: 'Spring Boot', level: 'Expert', icon: <Server className="w-6 h-6" />, years: '3.5+', color: '#6DB33F' },
+        { name: 'Spring Security', level: 'Advanced', icon: <ShieldCheck className="w-6 h-6" />, years: '2+', color: '#6DB33F' },
+        { name: 'Spring Batch', level: 'Intermediate', icon: <Layers className="w-6 h-6" />, years: '1+', color: '#6DB33F' },
+        { name: 'Hibernate', level: 'Advanced', icon: <Database className="w-6 h-6" />, years: '2+', color: '#59666C' },
+        { name: 'React.js', level: 'Intermediate', icon: <Code className="w-6 h-6" />, years: '1+', color: '#61DAFB' }
       ]
     },
     {
-      category: 'Frontend Development',
-      icon: <Monitor className="w-8 h-8" />,
+      category: 'Architecture',
+      icon: <Layers className="w-8 h-8" />,
       skills: [
-        { name: 'React.js', level: 'Intermediate', icon: <Monitor className="w-6 h-6" />, years: '1+', color: '#61DAFB' },
-        { name: 'Tailwind CSS', level: 'Advanced', icon: <Monitor className="w-6 h-6" />, years: '1+', color: '#06B6D4' },
-        { name: 'JavaScript', level: 'Advanced', icon: <Code className="w-6 h-6" />, years: '2+', color: '#F7DF1E' },
-        { name: 'JSF', level: 'Advanced', icon: <Monitor className="w-6 h-6" />, years: '2+', color: '#007396' }
+        { name: 'Microservices', level: 'Advanced', icon: <Server className="w-6 h-6" />, years: '2+', color: '#3B82F6' },
+        { name: 'RESTful API Design', level: 'Expert', icon: <Server className="w-6 h-6" />, years: '3.5+', color: '#009688' },
+        { name: 'Event-Driven Architecture', level: 'Advanced', icon: <Zap className="w-6 h-6" />, years: '1+', color: '#F59E0B' },
+        { name: 'JWT Authentication', level: 'Advanced', icon: <ShieldCheck className="w-6 h-6" />, years: '2+', color: '#3B82F6' }
+      ]
+    },
+    {
+      category: 'Database',
+      icon: <Database className="w-8 h-8" />,
+      skills: [
+        { name: 'MySQL', level: 'Expert', icon: <Database className="w-6 h-6" />, years: '3.5+', color: '#4479A1' }
+      ]
+    },
+    {
+      category: 'Messaging',
+      icon: <Zap className="w-8 h-8" />,
+      skills: [
+        { name: 'RabbitMQ', level: 'Advanced', icon: <Zap className="w-6 h-6" />, years: '1+', color: '#FF6600' }
       ]
     },
     {
       category: 'Cloud & DevOps',
       icon: <Cloud className="w-8 h-8" />,
       skills: [
-        { name: 'AWS', level: 'Intermediate', icon: <Cloud className="w-6 h-6" />, years: '2+', color: '#FF9900' },
-        { name: 'Docker', level: 'Intermediate', icon: <Server className="w-6 h-6" />, years: '2+', color: '#2496ED' },
-        { name: 'Git', level: 'Advanced', icon: <Code className="w-6 h-6" />, years: '3+', color: '#F05032' },
+        { name: 'AWS EC2', level: 'Intermediate', icon: <Cloud className="w-6 h-6" />, years: '1+', color: '#FF9900' },
+        { name: 'Docker', level: 'Intermediate', icon: <Server className="w-6 h-6" />, years: '1+', color: '#2496ED' },
         { name: 'Jenkins', level: 'Intermediate', icon: <Server className="w-6 h-6" />, years: '1+', color: '#D24939' },
-        { name: 'Maven', level: 'Advanced', icon: <Wrench className="w-6 h-6" />, years: '3+', color: '#C71A36' }
+        { name: 'CI/CD', level: 'Advanced', icon: <Zap className="w-6 h-6" />, years: '2+', color: '#3B82F6' },
+        { name: 'Maven', level: 'Advanced', icon: <Layers className="w-6 h-6" />, years: '3+', color: '#C71A36' },
+        { name: 'Git', level: 'Advanced', icon: <Code className="w-6 h-6" />, years: '3.5+', color: '#F05032' }
+      ]
+    },
+    {
+      category: 'Practices',
+      icon: <Users className="w-8 h-8" />,
+      skills: [
+        { name: 'Agile/Scrum', level: 'Advanced', icon: <Users className="w-6 h-6" />, years: '3+', color: '#3B82F6' },
+        { name: 'TDD', level: 'Advanced', icon: <ShieldCheck className="w-6 h-6" />, years: '2+', color: '#10B981' },
+        { name: 'OOP', level: 'Expert', icon: <Code className="w-6 h-6" />, years: '3.5+', color: '#1E3A5F' },
+        { name: 'Code Review', level: 'Advanced', icon: <Users className="w-6 h-6" />, years: '2+', color: '#3B82F6' },
+        { name: 'Production Support', level: 'Advanced', icon: <ShieldCheck className="w-6 h-6" />, years: '2+', color: '#10B981' }
       ]
     }
   ];
 
+  const categoryNames = ['All', ...skillCategories.map(c => c.category)];
 
   return (
     <section ref={skillsRef} id="skills" className="py-20 bg-background">
@@ -101,13 +108,13 @@ const Skills = () => {
             Skills & Technologies
           </h2>
           <p className="text-secondary max-w-2xl mx-auto">
-            A comprehensive toolkit for data analysis, machine learning, and full-stack development
+            A backend-focused toolkit for building scalable, secure, and production-ready systems
           </p>
         </div>
 
         {/* Category Filter Tabs */}
         <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {['All', 'Data Analysis & Processing', 'Machine Learning', 'Data Visualization', 'Backend Development', 'Frontend Development', 'Cloud & DevOps'].map((filter) => (
+          {categoryNames.map((filter) => (
             <button
               key={filter}
               onClick={() => setActiveFilter(filter)}
@@ -172,7 +179,7 @@ const Skills = () => {
         <div className={`text-center transition-all duration-1000 delay-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <h3 className="text-2xl font-bold text-primary mb-8">Additional Tools & Platforms</h3>
           <div className="flex flex-wrap justify-center gap-4">
-            {['Git', 'Jupyter', 'VS Code', 'Azure', 'Google Analytics', 'Excel'].map((tool, index) => (
+            {['IntelliJ IDEA', 'Postman', 'Swagger/OpenAPI', 'VS Code', 'Linux'].map((tool, index) => (
               <span
                 key={index}
                 className="px-4 py-2 bg-card border rounded-full text-primary font-medium hover:bg-accent hover:text-white transition-all duration-300 cursor-default"
